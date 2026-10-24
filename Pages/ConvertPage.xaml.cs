@@ -31,7 +31,7 @@ public partial class ConvertPage : ContentPage
         From.ItemsSource = codes; To.ItemsSource = codes;
         From.SelectedIndex = Math.Max(0, codes.IndexOf(f ?? codes[0]));
         To.SelectedIndex = Math.Max(0, codes.IndexOf(t ?? codes[1]));
-        foreach (Button b in Chips.Children) { bool on = b.Text == c; b.BackgroundColor = Color.FromArgb(on ? "#1F3A68" : "#FFFFFF"); b.TextColor = on ? Colors.White : Color.FromArgb("#1B2A49"); }
+        foreach (Button b in Chips.Children) { bool on = b.Text == c; var nv = Color.FromArgb("#1F3A68"); b.SetAppThemeColor(Button.BackgroundColorProperty, on ? nv : Colors.White, on ? nv : Color.FromArgb("#1B2336")); b.SetAppThemeColor(Button.TextColorProperty, on ? Colors.White : Color.FromArgb("#1B2A49"), on ? Colors.White : Color.FromArgb("#E8ECF5")); }
         busy = false; Refresh();
     }
 

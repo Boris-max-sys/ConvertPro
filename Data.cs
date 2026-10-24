@@ -50,6 +50,8 @@ public static class Store
     public static int Decimals { get => Preferences.Get("dec", 2); set => Preferences.Set("dec", value); }
     public static bool CacheRates { get => Preferences.Get("cache", true); set => Preferences.Set("cache", value); }
     public static string PreferredCurrency { get => Preferences.Get("cur", "EUR"); set => Preferences.Set("cur", value); }
+    public static string Theme { get => Preferences.Get("theme", "Syst\u00e8me"); set => Preferences.Set("theme", value); }
+    public static void ApplyTheme() => Application.Current!.UserAppTheme = Theme switch { "Sombre" => AppTheme.Dark, "Clair" => AppTheme.Light, _ => AppTheme.Unspecified };
     public static DateTime RatesDate
     {
         get => DateTime.Parse(Preferences.Get("rd", "2026-10-06T09:30:00"));

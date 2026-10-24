@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ConvertPro.ConvertPage" Title="ConvertPro" BackgroundColor="#EEF1F6">
+             x:Class="ConvertPro.ConvertPage" Title="ConvertPro" BackgroundColor="{AppThemeBinding Light=#EEF1F6, Dark=#0F1523}">
     <ScrollView><VerticalStackLayout Padding="16" Spacing="12">
-        <Label Text="Vos conversions, simplement." FontSize="24" FontAttributes="Bold" TextColor="#1B2A49" />
-        <Label Text="Unités et devises, même hors connexion." TextColor="#5B6785" />
+        <Label Text="Vos conversions, simplement." FontSize="24" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1B2A49, Dark=#E8ECF5}" />
+        <Label Text="Unités et devises, même hors connexion." TextColor="{AppThemeBinding Light=#5B6785, Dark=#A9B4CC}" />
         <Border x:Name="Offline" IsVisible="False" BackgroundColor="#FFF1DC" Padding="12">
             <Label Text="Vous êtes hors connexion. La conversion utilise les taux enregistrés sur votre téléphone." TextColor="#7A5A1E" />
         </Border>
         <ScrollView Orientation="Horizontal"><HorizontalStackLayout x:Name="Chips" Spacing="8" /></ScrollView>
         <Grid ColumnDefinitions="*,Auto,*" ColumnSpacing="8">
             <Picker x:Name="From" Title="De" SelectedIndexChanged="OnChange" />
-            <Button Grid.Column="1" Text="⇄" Clicked="OnSwap" BackgroundColor="#E4EAF7" TextColor="#1B2A49" CornerRadius="24" />
+            <Button Grid.Column="1" Text="⇄" Clicked="OnSwap" BackgroundColor="{AppThemeBinding Light=#E4EAF7, Dark=#2A3550}" TextColor="{AppThemeBinding Light=#1B2A49, Dark=#E8ECF5}" CornerRadius="24" />
             <Picker Grid.Column="2" x:Name="To" Title="Vers" SelectedIndexChanged="OnChange" />
         </Grid>
         <Entry x:Name="Input" Placeholder="Valeur à convertir" Keyboard="Numeric" Text="10" FontSize="28" TextChanged="OnChange" Completed="OnSave" />
-        <Border Padding="16" BackgroundColor="White" StrokeShape="RoundRectangle 16"><VerticalStackLayout>
+        <Border Padding="16" BackgroundColor="{AppThemeBinding Light=White, Dark=#1B2336}" StrokeShape="RoundRectangle 16"><VerticalStackLayout>
             <Grid ColumnDefinitions="*,Auto">
-                <Label Text="RÉSULTAT" FontSize="12" TextColor="#1F3A68" VerticalOptions="Center" />
-                <Button Grid.Column="1" x:Name="Star" Text="☆" Clicked="OnStar" BackgroundColor="Transparent" TextColor="#1F3A68" FontSize="22" />
+                <Label Text="RÉSULTAT" FontSize="12" TextColor="{AppThemeBinding Light=#1F3A68, Dark=#8FB0F0}" VerticalOptions="Center" />
+                <Button Grid.Column="1" x:Name="Star" Text="☆" Clicked="OnStar" BackgroundColor="Transparent" TextColor="{AppThemeBinding Light=#1F3A68, Dark=#8FB0F0}" FontSize="22" />
             </Grid>
-            <Label x:Name="Result" FontSize="36" FontAttributes="Bold" TextColor="#1F3A68" />
-            <Label x:Name="Formula" FontSize="12" TextColor="#5B6785" />
+            <Label x:Name="Result" FontSize="36" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F3A68, Dark=#8FB0F0}" />
+            <Label x:Name="Formula" FontSize="12" TextColor="{AppThemeBinding Light=#5B6785, Dark=#A9B4CC}" />
             <HorizontalStackLayout x:Name="Actions" Spacing="8" Margin="0,8,0,0">
-                <Button x:Name="CopyBtn" Text="Copier" Clicked="OnCopy" BackgroundColor="#E4EAF7" TextColor="#1B2A49" />
-                <Button x:Name="ShareBtn" Text="Partager" Clicked="OnShare" BackgroundColor="#E4EAF7" TextColor="#1B2A49" />
+                <Button x:Name="CopyBtn" Text="Copier" Clicked="OnCopy" BackgroundColor="{AppThemeBinding Light=#E4EAF7, Dark=#2A3550}" TextColor="{AppThemeBinding Light=#1B2A49, Dark=#E8ECF5}" />
+                <Button x:Name="ShareBtn" Text="Partager" Clicked="OnShare" BackgroundColor="{AppThemeBinding Light=#E4EAF7, Dark=#2A3550}" TextColor="{AppThemeBinding Light=#1B2A49, Dark=#E8ECF5}" />
             </HorizontalStackLayout>
         </VerticalStackLayout></Border>
         <Button Text="Enregistrer dans l'historique" Clicked="OnSave" BackgroundColor="#1F3A68" TextColor="White" />
