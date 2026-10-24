@@ -24,6 +24,7 @@
             <Label x:Name="Formula" FontSize="12" TextColor="#5B6785" />
             <HorizontalStackLayout x:Name="Actions" Spacing="8" Margin="0,8,0,0">
                 <Button x:Name="CopyBtn" Text="Copier" Clicked="OnCopy" BackgroundColor="#E4EAF7" TextColor="#1B2A49" />
+                <Button x:Name="ShareBtn" Text="Partager" Clicked="OnShare" BackgroundColor="#E4EAF7" TextColor="#1B2A49" />
             </HorizontalStackLayout>
         </VerticalStackLayout></Border>
         <Button Text="Enregistrer dans l'historique" Clicked="OnSave" BackgroundColor="#1F3A68" TextColor="White" />

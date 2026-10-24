@@ -69,4 +69,9 @@ public partial class ConvertPage : ContentPage
         await Clipboard.Default.SetTextAsync(Result.Text);
         CopyBtn.Text = "Copi\u00e9 \u2713"; await Task.Delay(1200); CopyBtn.Text = "Copier";
     }
+    async void OnShare(object? s, EventArgs e)
+    {
+        if (!TryGet(out var f, out var t, out _)) return;
+        await Share.Default.RequestAsync(new ShareTextRequest { Title = "ConvertPro", Text = $"{Input.Text} {f} = {Result.Text}" });
+    }
 }
