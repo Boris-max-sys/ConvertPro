@@ -63,4 +63,10 @@ public partial class ConvertPage : ContentPage
         Store.AddHistory(new(cat, f, t, v, Data.Convert(cat, f, t, v), DateTime.Now));
         DisplayAlert("Historique", "Conversion enregistr\u00e9e.", "OK");
     }
+    async void OnCopy(object? s, EventArgs e)
+    {
+        if (Result.Text is not { Length: > 1 }) return;
+        await Clipboard.Default.SetTextAsync(Result.Text);
+        CopyBtn.Text = "Copi\u00e9 \u2713"; await Task.Delay(1200); CopyBtn.Text = "Copier";
+    }
 }
